@@ -14,7 +14,7 @@ body {
 	background-size: cover;
 }
 
-h2 > p{
+h2 + p:hover {
 	color:#AA3939;
 	text-align:center;
 	border: 5px solid rgb(255, 176, 170, 0.5);
@@ -23,7 +23,7 @@ h2 > p{
 
 
 p { 
-    color:pink;
+    color:pink !important;
  }
 
 
@@ -36,8 +36,9 @@ p {
   	display: inline-block;
   }
 
-.webtext {
+.webtext:first-child {
 	border: 5px dashed green;
+
 }
 
 
