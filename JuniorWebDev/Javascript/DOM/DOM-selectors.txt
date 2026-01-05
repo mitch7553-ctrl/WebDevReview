@@ -1,0 +1,312 @@
+DOM Selectors
+--------------
+BASIC DOM SELECTORS
+
+getElementById
+
+Selects ONE element by its ID
+
+Fastest selector
+
+Returns: Element or null
+
+Example:
+const title = document.getElementById("title");
+
+getElementsByClassName
+
+Selects ALL elements with a class name
+
+Returns: HTMLCollection (live)
+
+Example:
+const items = document.getElementsByClassName("item");
+
+getElementsByTagName
+
+Selects ALL elements by tag name
+
+Returns: HTMLCollection (live)
+
+Example:
+const paragraphs = document.getElementsByTagName("p");
+
+getElementsByName
+
+Selects elements by name attribute
+
+Mostly used for form inputs
+
+Returns: NodeList
+
+Example:
+const radios = document.getElementsByName("gender");
+
+MODERN CSS SELECTORS (RECOMMENDED)
+
+querySelector
+
+Selects FIRST matching element
+
+Uses CSS selector syntax
+
+Returns: Element or null
+
+Example:
+const button = document.querySelector(".btn.primary");
+
+querySelectorAll
+
+Selects ALL matching elements
+
+Returns: NodeList (not live)
+
+Example:
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(btn => {
+console.log(btn.textContent);
+});
+
+ATTRIBUTE METHODS
+
+getAttribute
+
+Gets value of an attribute
+
+Example:
+const img = document.querySelector("img");
+img.getAttribute("src");
+
+setAttribute
+
+Sets or updates an attribute
+
+Example:
+img.setAttribute("alt", "Profile Picture");
+
+removeAttribute
+
+Removes an attribute
+
+Example:
+img.removeAttribute("alt");
+
+hasAttribute
+
+Checks if attribute exists
+
+Example:
+img.hasAttribute("src");
+
+CONTENT MANIPULATION
+
+textContent
+
+Gets or sets plain text
+
+SAFE from XSS
+
+Example:
+element.textContent = "Hello World";
+
+innerText
+
+Similar to textContent
+
+Respects CSS visibility
+
+Example:
+element.innerText = "Visible Text";
+
+innerHTML (DANGEROUS)
+
+Reads or writes raw HTML
+
+Vulnerable to XSS
+
+Example:
+element.innerHTML = "<strong>Hello</strong>";
+
+outerHTML
+
+Replaces the entire element
+
+Example:
+element.outerHTML = "<div>New Element</div>";
+
+STYLING ELEMENTS
+
+style.property
+
+Applies inline CSS
+
+Example:
+element.style.color = "red";
+element.style.backgroundColor = "blue";
+
+className
+
+Replaces ALL classes
+
+Example:
+element.className = "active";
+
+classList (BEST PRACTICE)
+
+classList.add
+Example:
+element.classList.add("active");
+
+classList.remove
+Example:
+element.classList.remove("active");
+
+classList.toggle
+Example:
+element.classList.toggle("active");
+
+classList.contains
+Example:
+element.classList.contains("active");
+
+DOM TRAVERSAL
+
+parentElement
+
+Gets the parent element
+
+Example:
+element.parentElement;
+
+children
+
+Gets child elements (HTMLCollection)
+
+Example:
+element.children;
+
+firstElementChild
+
+First child element
+
+Example:
+element.firstElementChild;
+
+lastElementChild
+
+Last child element
+
+Example:
+element.lastElementChild;
+
+nextElementSibling
+
+Next sibling
+
+Example:
+element.nextElementSibling;
+
+previousElementSibling
+
+Previous sibling
+
+Example:
+element.previousElementSibling;
+
+CREATING & REMOVING ELEMENTS
+
+createElement
+
+Creates a new element
+
+Example:
+const div = document.createElement("div");
+
+appendChild
+
+Adds element at the end
+
+Example:
+parent.appendChild(div);
+
+prepend
+
+Adds element at the beginning
+
+Example:
+parent.prepend(div);
+
+remove
+
+Removes element
+
+Example:
+element.remove();
+
+replaceChild
+
+Replaces an element
+
+Example:
+parent.replaceChild(newEl, oldEl);
+
+EVENTS
+
+addEventListener
+
+Adds event listener
+
+Example:
+button.addEventListener("click", () => {
+console.log("Clicked");
+});
+
+removeEventListener
+
+Removes event listener
+
+Example:
+button.removeEventListener("click", handler);
+
+DATA ATTRIBUTES
+
+dataset
+
+Access data-* attributes
+
+HTML:
+
+<div data-id="123"></div>
+
+JS:
+element.dataset.id;
+
+PERFORMANCE BEST PRACTICES
+
+Always cache selectors:
+
+BAD:
+document.querySelector("#box").classList.add("active");
+
+GOOD:
+const box = document.querySelector("#box");
+box.classList.add("active");
+
+COMMON MISTAKES
+
+• Overusing innerHTML
+• Not caching selectors
+• Modifying styles instead of classes
+• Forgetting querySelector returns only ONE element
+• Assuming NodeList is live (it is not)
+
+QUICK REFERENCE SUMMARY
+
+Select by ID: getElementById
+Select multiple: querySelectorAll
+Best selector: querySelector
+Modify classes: classList
+Read text: textContent
+Insert HTML: innerHTML (dangerous)
+Traverse DOM: parentElement / children

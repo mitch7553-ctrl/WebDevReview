@@ -1,96 +1,434 @@
 JAVASCRIPT TYPES
 -----------------
-1. Number 
-2. String
-3. Boolean
-4. Undefined
-5. Null
-<!-- 6. Symbol (new in ECMAScript 6) -->
-7. Object
+Number
 
-JAVASCRIPT COMPARISONS
------------------
+Represents integers and floating-point numbers
 
-!==
-===
->=
-<=
->
-<
+Includes NaN and Infinity
 
-JAVASCRIPT VARIABLES
------------------
-var
-<!-- let (new in ECMAScript 6)-->  
-<!-- const (new in ECMAScript 6)-->
+Example:
+let age = 25;
+let price = 10.99;
 
-JAVASCRIPT CONDITIONALS
------------------
-if
-else
-else if
-<!-- ternary operator -->
-<!-- switch -->
+String
 
+Represents text
 
-JAVASCRIPT LOGICAL OPERATORS
------------------
-&&
-||
-!
+Can use single, double, or backticks
 
-JAVASCRIPT FUNCTIONS
------------------
-var a = function name() {}
-function name() {}
-return
-<!-- () => (new in ECMAScript 6) -->
+Example:
+let name = "John";
+let greeting = Hello ${name};
 
-JAVASCRIPT DATA STRUCTURES
------------------
-Array
+Boolean
+
+Represents true or false
+
+Example:
+let isLoggedIn = true;
+
+Undefined
+
+Variable declared but not assigned a value
+
+Example:
+let x;
+console.log(x); // undefined
+
+Null
+
+Intentional absence of a value
+
+Example:
+let user = null;
+
+Symbol (ES6)
+
+Unique and immutable value
+
+Often used as object keys
+
+Example:
+const id = Symbol("id");
+
 Object
 
-JAVASCRIPT LOOPING
------------------
-for
-while
-do 
-forEach (new in ECMAScript 5) 
+Collection of key-value pairs
 
+Example:
+let person = {
+name: "John",
+age: 30
+};
+
+JAVASCRIPT COMPARISONS
+
+===
+
+Strict equality (value + type)
+
+Example:
+5 === "5" // false
+
+!==
+
+Strict inequality
+
+Example:
+5 !== "5" // true
+
+=
+
+Greater than or equal to
+
+Example:
+10 >= 5
+
+<=
+
+Less than or equal to
+
+Example:
+3 <= 7
+
+Greater than
+
+Example:
+10 > 5
+
+<
+
+Less than
+
+Example:
+5 < 10
+
+JAVASCRIPT VARIABLES
+
+var
+
+Function-scoped
+
+Can be redeclared
+
+Avoid in modern JS
+
+Example:
+var x = 10;
+
+let (ES6)
+
+Block-scoped
+
+Can be reassigned
+
+Example:
+let count = 5;
+
+const (ES6)
+
+Block-scoped
+
+Cannot be reassigned
+
+Example:
+const PI = 3.14;
+
+JAVASCRIPT CONDITIONALS
+
+if
+
+Runs code if condition is true
+
+Example:
+if (age > 18) {
+console.log("Adult");
+}
+
+else
+
+Runs if condition is false
+
+Example:
+if (age > 18) {
+console.log("Adult");
+} else {
+console.log("Minor");
+}
+
+else if
+
+Checks additional conditions
+
+Example:
+if (age < 13) {
+console.log("Child");
+} else if (age < 18) {
+console.log("Teen");
+} else {
+console.log("Adult");
+}
+
+ternary operator
+
+Short conditional
+
+Example:
+let result = age >= 18 ? "Adult" : "Minor";
+
+switch
+
+Multiple condition handling
+
+Example:
+switch(day) {
+case 1:
+console.log("Monday");
+break;
+default:
+console.log("Unknown");
+}
+
+JAVASCRIPT LOGICAL OPERATORS
+
+&&
+
+AND operator
+
+Example:
+age > 18 && hasID;
+
+||
+
+OR operator
+
+Example:
+isAdmin || isOwner;
+
+!
+
+NOT operator
+
+Example:
+!isLoggedIn;
+
+JAVASCRIPT FUNCTIONS
+
+Function Expression
+
+Example:
+var greet = function() {
+console.log("Hello");
+};
+
+Function Declaration
+
+Example:
+function greet() {
+console.log("Hello");
+}
+
+return
+
+Sends a value back
+
+Example:
+function add(a, b) {
+return a + b;
+}
+
+Arrow Function (ES6)
+
+Example:
+const add = (a, b) => a + b;
+
+JAVASCRIPT DATA STRUCTURES
+
+Array
+
+Ordered list of values
+
+Example:
+let numbers = [1, 2, 3];
+
+Object
+
+Stores key-value pairs
+
+Example:
+let user = {
+name: "Alex",
+age: 25
+};
+
+JAVASCRIPT LOOPS
+
+for
+
+Loop with counter
+
+Example:
+for (let i = 0; i < 5; i++) {
+console.log(i);
+}
+
+while
+
+Runs while condition is true
+
+Example:
+while (count < 5) {
+count++;
+}
+
+do...while
+
+Runs at least once
+
+Example:
+do {
+count++;
+} while (count < 5);
+
+forEach (ES5)
+
+Loops through arrays
+
+Example:
+numbers.forEach(num => {
+console.log(num);
+});
 
 JAVASCRIPT KEYWORDS
------------------
+
 break
+
+Stops a loop or switch
+
 case
+
+Defines case in switch
+
 catch
+
+Handles errors
+
 class
+
+Blueprint for objects
+
 const
+
+Constant variable
+
 continue
+
+Skips loop iteration
+
 debugger
+
+Pauses execution
+
 default
+
+Default case in switch
+
 delete
+
+Deletes object property
+
 do
+
+Executes loop once
+
 else
+
+Alternative condition
+
 export
+
+Exports module content
+
 extends
+
+Inherits class
+
 finally
+
+Executes after try/catch
+
 for
+
+Loop
+
 function
+
+Declares function
+
 if
+
+Conditional
+
 import
+
+Imports module
+
 in
+
+Checks property existence
+
 instanceof
+
+Checks object type
+
 new
+
+Creates instance
+
 return
+
+Returns value
+
 super
+
+Calls parent constructor
+
 switch
+
+Multi-condition logic
+
 this
+
+Refers to current object
+
 throw
+
+Throws error
+
 try
+
+Wraps risky code
+
 typeof
+
+Returns data type
+
 var
+
+Declares variable
+
 void
+
+Evaluates expression without returning
+
 while
+
+Loop
+
 with
+
+Extends scope (deprecated)
+
 yield
+
+Pauses generator function
