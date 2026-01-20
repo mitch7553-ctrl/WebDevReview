@@ -1,4 +1,4 @@
-Featured App 
+Featured Apps
 ## React Robofriends App - Features
 
 ### **Core Features**
